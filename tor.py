@@ -17,7 +17,7 @@ def sysupdate():
   os.popen('apt-get -y upgrade')
   print '  [+] Done'
   print '[+] Installing Prereqs'
-  os.popen('apt-get -y install libevent-dev')
+  os.popen('apt-get -y install libevent-dev libssl-dev')
 
 def downloadtor(tordir):
   versions = []
