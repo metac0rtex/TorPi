@@ -75,11 +75,15 @@ def main():
   banner()
   if not os.getuid() == 0:
     sys.exit('Need root due to apt-get usage')
-#  try:
-#    sysupdate()
-#  except Exception as e:
-#    print '[!] Error while trying to use apt-get'
-#    print str(e)
-  downloadtor(tordir)
+  try:
+    sysupdate()
+  except Exception as e:
+    print '[!] Error while trying to use apt-get'
+    print str(e)
+  try:
+    downloadtor(tordir)
+  except Exception as e:
+    print '[!] Error installing Tor'
+    print str(e)
 
 main()
